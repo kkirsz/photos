@@ -1,0 +1,19 @@
+<?php
+
+return [        
+    'modules' => [
+        'Zend\Router',
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'KKirsz\Photos',        
+    ],
+    'module_listener_options' => [        
+        'module_paths' => [            
+            './vendor',
+            'KKirsz\Photos' => __DIR__ . '/../src',
+        ],
+        'config_glob_paths' => [],        
+        'config_cache_enabled' => false,        
+        'module_map_cache_enabled' => false,        
+    ],
+];

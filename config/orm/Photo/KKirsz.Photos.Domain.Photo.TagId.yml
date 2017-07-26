@@ -1,0 +1,7 @@
+KKirsz\Photos\Domain\Photo\TagId:
+    type: embeddable
+    fields:
+        uuid:
+            name: uuid
+            type: string
+            length: 36

@@ -1,0 +1,26 @@
+KKirsz\Photos\Domain\Photo\User:    
+    type: entity
+    repositoryClass: KKirsz\Photos\Infrastructure\Persistence\DoctrineUserRepository
+    table: user
+    id: 
+        id:
+            name: id
+            type: integer
+            options:
+                unsigned: true
+            generator:
+                strategy: AUTO
+    embedded:
+        userId:            
+            class: KKirsz\Photos\Domain\Photo\UserId            
+            columnPrefix: false  
+    fields:
+        email:
+            name: email
+            type: string
+            length: 100
+    uniqueConstraints:
+        UNIQ_uuid:
+            columns: [uuid]
+        UNIQ_email:
+            columns: [email]

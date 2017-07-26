@@ -1,0 +1,27 @@
+KKirsz\Photos\Domain\Photo\Tag:    
+    type: entity
+    repositoryClass: KKirsz\Photos\Infrastructure\Persistence\DoctrineTagRepository
+    table: tag
+    readOnly: true
+    id: 
+        id:
+            name: id
+            type: integer
+            options:
+                unsigned: true
+            generator:
+                strategy: AUTO
+    embedded:
+        tagId:            
+            class: KKirsz\Photos\Domain\Photo\TagId            
+            columnPrefix: false                   
+    fields:
+        name:
+            name: name
+            type: string
+            length: 32
+    uniqueConstraints:
+        UNIQ_uuid:
+            columns: [uuid]            
+        UNIQ_name:
+            columns: [name]

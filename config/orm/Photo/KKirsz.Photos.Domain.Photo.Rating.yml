@@ -1,0 +1,42 @@
+KKirsz\Photos\Domain\Photo\Rating:    
+    type: entity    
+    repositoryClass: KKirsz\Photos\Infrastructure\Persistence\DoctrineRatingRepository
+    table: rating
+    readOnly: true
+    id: 
+        id:
+            name: id
+            type: integer
+            options:
+                unsigned: true
+            generator:
+                strategy: AUTO
+    embedded:
+        ratingId:            
+            class: KKirsz\Photos\Domain\Photo\RatingId            
+            columnPrefix: false                   
+    fields:
+        value:
+            name: value
+            type: smallint
+            options:
+                unsigned: true
+    manyToOne:
+        photo:
+            targetEntity: KKirsz\Photos\Domain\Photo\Photo
+            joinColumn:
+                name: photo_id
+                referencedColumnName: id
+                nullable: false
+        ratedBy:
+            targetEntity: KKirsz\Photos\Domain\Photo\User
+            joinColumn:
+                name: rated_by
+                referencedColumnName: id
+                nullable: false
+    uniqueConstraints:
+        UNIQ_uuid:
+            columns: [uuid]
+        UNIQ_photo_id_rated_by:
+            columns: [photo_id, rated_by]
+    
