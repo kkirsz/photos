@@ -37,8 +37,14 @@ class UserTest extends TestCase
      */
     public function invalidEmailDataProvider() : array
     {
+        $longString = '';
+        for ($i = 1; $i <= 101; $i++) {
+            $longString .= 'a';
+        }
+        
         return [
             [''],
+            [$longString],
             ['invalid'],
         ];
     }
