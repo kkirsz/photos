@@ -13,13 +13,12 @@ use KKirsz\Photos\Domain\Photo\User;
 /**
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
-class DoctrineRatingRepository
-    extends DoctrineRepository
-    implements RatingRepository
+class DoctrineRatingRepository extends DoctrineRepository implements
+    RatingRepository
 {
     /**
-     * 
-     * @return RatingId 
+     *
+     * @return RatingId
      */
     public function nextIdentity() : RatingId
     {
@@ -28,7 +27,7 @@ class DoctrineRatingRepository
     }
     
     /**
-     * 
+     *
      * @param Rating $rating
      */
     public function add(Rating $rating)
@@ -37,10 +36,10 @@ class DoctrineRatingRepository
     }
     
     /**
-     * 
+     *
      * @param Photo $photo
      * @param User $ratedBy
-     * @return Rating|null 
+     * @return Rating|null
      */
     public function findPhotoRatingByUser(Photo $photo, User $ratedBy)
     {

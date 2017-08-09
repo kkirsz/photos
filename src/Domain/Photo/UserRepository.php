@@ -10,21 +10,21 @@ namespace KKirsz\Photos\Domain\Photo;
 interface UserRepository
 {
     /**
-     * 
-     * @return UserId 
+     *
+     * @return UserId
      */
     public function nextIdentity() : UserId;
     
     /**
-     * 
+     *
      * @param User $user
      */
     public function add(User $user);
     
     /**
-     * 
+     *
      * @param string $email
-     * @return User|null 
+     * @return User|null
      */
     public function findByEmail(string $email);
 }

@@ -10,22 +10,22 @@ namespace KKirsz\Photos\Domain\Photo;
 interface RatingRepository
 {
     /**
-     * 
-     * @return RatingId 
+     *
+     * @return RatingId
      */
     public function nextIdentity() : RatingId;
     
     /**
-     * 
+     *
      * @param Rating $rating
      */
     public function add(Rating $rating);
     
     /**
-     * 
+     *
      * @param Photo $photo
      * @param User $ratedBy
-     * @return Rating|null 
+     * @return Rating|null
      */
-    public function findPhotoRatingByUser(Photo $photo, User $ratedBy);            
+    public function findPhotoRatingByUser(Photo $photo, User $ratedBy);
 }

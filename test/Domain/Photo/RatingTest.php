@@ -17,26 +17,26 @@ class RatingTest extends TestCase
 {
     /**
      *
-     * @var RatingId 
+     * @var RatingId
      */
     private $ratingId;
     
     /**
      *
-     * @var Photo 
+     * @var Photo
      */
     private $photo;
     
     /**
      *
-     * @var User 
+     * @var User
      */
     private $ratedBy;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         $this->ratingId = $this->createMock(RatingId::class);
         $this->photo    = $this->createMock(Photo::class);
@@ -44,7 +44,7 @@ class RatingTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @return array
      */
     public function invalidValueDataProvider()
@@ -55,7 +55,7 @@ class RatingTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider invalidValueDataProvider
      * @param int $value
      */
@@ -66,7 +66,7 @@ class RatingTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @return array
      */
     public function validValueDataProvider()
@@ -77,14 +77,18 @@ class RatingTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider validValueDataProvider
      * @param int $value
      */
     public function testCanBeCreated(int $value)
     {
-        $rating = new Rating($this->ratingId, $this->photo,
-                $this->ratedBy, $value);
+        $rating = new Rating(
+            $this->ratingId,
+            $this->photo,
+            $this->ratedBy,
+            $value
+        );
         $this->assertInstanceOf(Rating::class, $rating);
         $this->assertEquals($this->ratingId, $rating->ratingId());
         $this->assertEquals($this->photo, $rating->photo());

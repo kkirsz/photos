@@ -12,7 +12,7 @@ use KKirsz\Photos\Domain\Photo\TagRepository;
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
 class DoctrineTagRepositoryTest extends EntityManagerTestCase
-{    
+{
     /**
      *
      * @var TagRepository
@@ -20,9 +20,9 @@ class DoctrineTagRepositoryTest extends EntityManagerTestCase
     private $tagRepository;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         parent::setUp();
         
@@ -31,22 +31,22 @@ class DoctrineTagRepositoryTest extends EntityManagerTestCase
     }
     
     /**
-     * 
+     *
      */
-    protected function tearDown() 
+    protected function tearDown()
     {
         $this->tagRepository = null;
         parent::tearDown();
     }
     
     /**
-     * 
+     *
      */
     public function testAddAndFindOneTag()
     {
         $this->entityManager()->getConnection()->beginTransaction();
         
-        $tagId = $this->tagRepository->nextIdentity();        
+        $tagId = $this->tagRepository->nextIdentity();
         $this->assertInstanceOf(TagId::class, $tagId);
                         
         $name = 'some name';

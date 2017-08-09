@@ -10,21 +10,21 @@ namespace KKirsz\Photos\Domain\Photo;
 interface TagRepository
 {
     /**
-     * 
-     * @return TagId 
+     *
+     * @return TagId
      */
     public function nextIdentity() : TagId;
     
     /**
-     * 
+     *
      * @param Tag $tag
      */
     public function add(Tag $tag);
     
     /**
-     * 
+     *
      * @param string $name
-     * @return Tag|null 
+     * @return Tag|null
      */
     public function findByName(string $name);
 }

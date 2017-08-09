@@ -15,30 +15,30 @@ use KKirsz\Photos\Domain\Photo\UserRepository;
 /**
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
-class DoctrineRatingRepositoryTest extends EntityManagerTestCase 
+class DoctrineRatingRepositoryTest extends EntityManagerTestCase
 {
     /**
      *
-     * @var PhotoRepository 
+     * @var PhotoRepository
      */
     private $photoRepository;
     
     /**
      *
-     * @var RatingRepository 
+     * @var RatingRepository
      */
     private $ratingRepository;
     
     /**
      *
-     * @var UserRepository 
+     * @var UserRepository
      */
     private $userRepository;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         parent::setUp();
         
@@ -53,7 +53,7 @@ class DoctrineRatingRepositoryTest extends EntityManagerTestCase
     }
     
     /**
-     * 
+     *
      */
     public function testAddAndFindOneRating()
     {

@@ -13,7 +13,7 @@ use Doctrine\ORM\Query\ResultSetMapping;
 abstract class DoctrineRepository extends EntityRepository
 {
     /**
-     * 
+     *
      * @return string
      */
     protected function uuid(): string
@@ -21,7 +21,7 @@ abstract class DoctrineRepository extends EntityRepository
         $sql   = 'SELECT UPPER(UUID()) AS uuid';
         $rsm   = new ResultSetMapping();
         $rsm->addScalarResult('uuid', 'uuid');
-        $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);        
+        $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
         return $query->getSingleScalarResult();
     }
 }

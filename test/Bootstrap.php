@@ -19,12 +19,12 @@ class Bootstrap
 {
     /**
      *
-     * @var ServiceManager 
+     * @var ServiceManager
      */
     private static $serviceManager;
     
     /**
-     * 
+     *
      * @throws RuntimeException
      */
     public static function init()
@@ -44,21 +44,21 @@ class Bootstrap
         $config = include 'config/application.config.php';
         
         $serviceManager       = new ServiceManager();
-        $serviceManagerConfig = new ServiceManagerConfig();        
-        $serviceManagerConfig->configureServiceManager($serviceManager);        
+        $serviceManagerConfig = new ServiceManagerConfig();
+        $serviceManagerConfig->configureServiceManager($serviceManager);
         $serviceManager->setService('ApplicationConfig', $config);
-        $serviceManager->get('ModuleManager')->loadModules();        
+        $serviceManager->get('ModuleManager')->loadModules();
         
         $name = 'doctrine.entitymanager.orm_default';
-        if ($serviceManager->has($name)) {  
-            $serviceManager->setShared($name, false);            
+        if ($serviceManager->has($name)) {
+            $serviceManager->setShared($name, false);
         }
         
         static::$serviceManager = $serviceManager;
     }
     
     /**
-     * 
+     *
      * @return ServiceManager
      * @throws UnexpectedValueException
      */

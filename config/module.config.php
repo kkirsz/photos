@@ -3,7 +3,7 @@
 return [
     'doctrine' => [
         
-        'connection' => [            
+        'connection' => [
             'orm_default' => [
                 'driverClass' => \Doctrine\DBAL\Driver\PDOMySql\Driver::class,
                 'params' => [
@@ -14,7 +14,7 @@ return [
                     'dbname'   => 'photos',
                 ],
             ],
-        ],        
+        ],
         
         'driver' => [
             'photos_driver' => [

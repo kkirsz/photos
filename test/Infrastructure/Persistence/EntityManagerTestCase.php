@@ -15,14 +15,14 @@ abstract class EntityManagerTestCase extends TestCase
 {
     /**
      *
-     * @var EntityManager 
+     * @var EntityManager
      */
     protected $entityManager;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         $this->ensureEntityManagerClosed();
         
@@ -31,15 +31,15 @@ abstract class EntityManagerTestCase extends TestCase
     }
     
     /**
-     * 
+     *
      */
-    protected function tearDown() 
+    protected function tearDown()
     {
         $this->ensureEntityManagerClosed();
     }
     
     /**
-     * 
+     *
      */
     protected function ensureEntityManagerClosed()
     {
@@ -50,7 +50,7 @@ abstract class EntityManagerTestCase extends TestCase
     }
 
     /**
-     * 
+     *
      * @return EntityManager
      * @throws \UnexpectedValueException
      */
@@ -60,5 +60,5 @@ abstract class EntityManagerTestCase extends TestCase
             throw new \UnexpectedValueException();
         }
         return $this->entityManager;
-    }    
+    }
 }

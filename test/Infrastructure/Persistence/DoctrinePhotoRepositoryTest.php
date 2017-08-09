@@ -36,9 +36,9 @@ class DoctrinePhotoRepositoryTest extends EntityManagerTestCase
     private $tagRepository;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         parent::setUp();
         
@@ -53,7 +53,7 @@ class DoctrinePhotoRepositoryTest extends EntityManagerTestCase
     }
     
     /**
-     * 
+     *
      */
     public function testAddAndFindOnePhoto()
     {
@@ -90,6 +90,6 @@ class DoctrinePhotoRepositoryTest extends EntityManagerTestCase
         $this->assertArrayHasKey($tagTwo->tagId()->uuid(), $readPhoto->tags());
         $this->assertContains($tagTwo, $readPhoto->tags());
         
-        $this->entityManager()->getConnection()->rollBack();        
+        $this->entityManager()->getConnection()->rollBack();
     }
 }

@@ -15,28 +15,28 @@ class Photo extends Entity
 {
     /**
      *
-     * @var PhotoId 
+     * @var PhotoId
      */
     private $photoId;
     
     /**
      *
-     * @var User 
+     * @var User
      */
     private $addedBy;
     
     /**
      *
-     * @var Collection 
+     * @var Collection
      */
     private $tags;
     
     /**
-     * 
+     *
      * @param PhotoId $photoId
-     * @param User $addedBy 
+     * @param User $addedBy
      */
-    public function __construct(PhotoId $photoId, User $addedBy) 
+    public function __construct(PhotoId $photoId, User $addedBy)
     {
         $this->setPhotoId($photoId);
         $this->setAddedBy($addedBy);
@@ -45,7 +45,7 @@ class Photo extends Entity
     
     
     /**
-     * 
+     *
      * @return PhotoId
      */
     public function photoId() : PhotoId
@@ -54,7 +54,7 @@ class Photo extends Entity
     }
     
     /**
-     * 
+     *
      * @param PhotoId $photoId
      */
     private function setPhotoId(PhotoId $photoId)
@@ -63,7 +63,7 @@ class Photo extends Entity
     }
     
     /**
-     * 
+     *
      * @return User
      */
     public function addedBy() : User
@@ -72,7 +72,7 @@ class Photo extends Entity
     }
     
     /**
-     * 
+     *
      * @param User $addedBy
      */
     private function setAddedBy(User $addedBy)
@@ -81,7 +81,7 @@ class Photo extends Entity
     }
     
     /**
-     * 
+     *
      * @return array
      */
     public function tags() : array
@@ -90,7 +90,7 @@ class Photo extends Entity
     }
         
     /**
-     * 
+     *
      * @param Collection $tags
      */
     private function setTags(Collection $tags)
@@ -99,11 +99,11 @@ class Photo extends Entity
     }
     
     /**
-     * 
+     *
      * @param Tag $tag
      */
     public function tag(Tag $tag)
     {
         $this->tags->set($tag->tagId()->uuid(), $tag);
-    }    
+    }
 }

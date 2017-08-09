@@ -13,7 +13,7 @@ use KKirsz\Photos\Domain\Photo\PhotoId;
 class PhotoIdTest extends TestCase
 {
     /**
-     * 
+     *
      * @return array
      */
     public function invalidUuidDataProvider() : array
@@ -22,7 +22,7 @@ class PhotoIdTest extends TestCase
             ['80CE9784.656C-11E7-A274-0242AC120002'],
             ['80CE9784-656C.11E7-A274-0242AC120002'],
             ['80CE9784-656C-11E7.A274-0242AC120002'],
-            ['80CE9784-656C-11E7-A274.0242AC120002'],            
+            ['80CE9784-656C-11E7-A274.0242AC120002'],
             ['80cE9784-656C-11E7-A274-0242AC120002'],
             ['80CE9784-656c-11E7-A274-0242AC120002'],
             ['80CE9784-656C-11e7-A274-0242AC120002'],
@@ -32,9 +32,9 @@ class PhotoIdTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider invalidUuidDataProvider
-     * @param string $uuid     
+     * @param string $uuid
      */
     public function testCannotBeCreated(string $uuid)
     {
@@ -43,7 +43,7 @@ class PhotoIdTest extends TestCase
     }
         
     /**
-     * 
+     *
      * @return array
      */
     public function validUuidDataProvider() : array
@@ -54,12 +54,12 @@ class PhotoIdTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider validUuidDataProvider
      * @param string $uuid
      */
     public function testCanBeCreatedAndIsImmutable(string $uuid)
-    {                
+    {
         $photoId = new PhotoId($uuid);
         $this->assertInstanceOf(PhotoId::class, $photoId);
 

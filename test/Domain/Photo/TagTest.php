@@ -20,15 +20,15 @@ class TagTest extends TestCase
     private $tagId;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
-    {        
+    protected function setUp()
+    {
         $this->tagId = $this->createMock(TagId::class);
     }
     
     /**
-     * 
+     *
      * @return array
      */
     public function invalidNameDataProvider() : array
@@ -40,18 +40,18 @@ class TagTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider invalidNameDataProvider
      * @param string $name
      */
     public function testCannotBeCreated(string $name)
-    {           
-        $this->expectException(\DomainException::class);        
+    {
+        $this->expectException(\DomainException::class);
         new Tag($this->tagId, $name);
     }
         
     /**
-     * 
+     *
      * @return array
      */
     public function validNameDataProvider() : array
@@ -62,12 +62,12 @@ class TagTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider validNameDataProvider
      * @param string $name
      */
     public function testCanBeCreated(string $name)
-    {           
+    {
         $tag   = new Tag($this->tagId, $name);
         $this->assertInstanceOf(Tag::class, $tag);
         $this->assertEquals($this->tagId, $tag->tagId());

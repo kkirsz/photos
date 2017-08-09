@@ -14,20 +14,20 @@ class ModuleTest extends TestCase
 {
     /**
      *
-     * @var Module 
+     * @var Module
      */
     private $module;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         $this->module = new Module();
     }
     
     /**
-     * 
+     *
      */
     public function testConfigIsReturned()
     {

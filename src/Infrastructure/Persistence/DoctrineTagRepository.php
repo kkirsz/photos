@@ -14,26 +14,26 @@ use KKirsz\Photos\Domain\Photo\TagRepository;
 class DoctrineTagRepository extends DoctrineRepository implements TagRepository
 {
     /**
-     * 
+     *
      * @return TagId
      */
     public function nextIdentity() : TagId
     {
-        $uuid = $this->uuid();        
+        $uuid = $this->uuid();
         return new TagId($uuid);
     }
     
     /**
-     * 
+     *
      * @param Tag $tag
      */
-    public function add(Tag $tag) 
+    public function add(Tag $tag)
     {
         $this->getEntityManager()->persist($tag);
     }
     
     /**
-     * 
+     *
      * @param string $name
      * @return Tag|null
      */

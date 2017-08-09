@@ -11,7 +11,7 @@ abstract class IdentifiedDomainObject
 {
     /**
      *
-     * @var int 
+     * @var int
      */
     protected $id = -1;
 }

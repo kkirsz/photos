@@ -10,21 +10,21 @@ namespace KKirsz\Photos\Domain\Photo;
 interface PhotoRepository
 {
     /**
-     * 
-     * @return PhotoId 
+     *
+     * @return PhotoId
      */
     public function nextIdentity() : PhotoId;
     
     /**
-     * 
+     *
      * @param Photo $photo
      */
     public function add(Photo $photo);
     
     /**
-     * 
+     *
      * @param PhotoId $photoId
-     * @return Photo|null 
+     * @return Photo|null
      */
     public function photoOfId(PhotoId $photoId);
 }

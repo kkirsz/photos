@@ -14,29 +14,29 @@ class Tag extends Entity
 {
     /**
      *
-     * @var TagId 
+     * @var TagId
      */
     private $tagId;
     
     /**
      *
-     * @var string 
+     * @var string
      */
     private $name;
     
     /**
-     * 
+     *
      * @param TagId $tagId
      * @param string $name
      */
-    public function __construct(TagId $tagId, string $name) 
+    public function __construct(TagId $tagId, string $name)
     {
         $this->setTagId($tagId);
         $this->setName($name);
     }
     
     /**
-     * 
+     *
      * @return TagId
      */
     public function tagId() : TagId
@@ -45,7 +45,7 @@ class Tag extends Entity
     }
     
     /**
-     * 
+     *
      * @param TagId $tagId
      */
     private function setTagId(TagId $tagId)
@@ -54,7 +54,7 @@ class Tag extends Entity
     }
     
     /**
-     * 
+     *
      * @return string
      */
     public function name() : string
@@ -63,7 +63,7 @@ class Tag extends Entity
     }
         
     /**
-     * 
+     *
      * @param string $name
      * @throws DomainException
      */
@@ -71,7 +71,7 @@ class Tag extends Entity
     {
         $len = strlen($name);
         
-        if ($len == 0) {            
+        if ($len == 0) {
             throw new DomainException('Name is required');
         }
         

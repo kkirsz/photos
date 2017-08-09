@@ -12,7 +12,7 @@ use KKirsz\Photos\Domain\Photo\UserRepository;
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
 class DoctrineUserRepositoryTest extends EntityManagerTestCase
-{    
+{
     /**
      *
      * @var UserRepository
@@ -20,9 +20,9 @@ class DoctrineUserRepositoryTest extends EntityManagerTestCase
     private $userRepository;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
+    protected function setUp()
     {
         parent::setUp();
         
@@ -31,22 +31,22 @@ class DoctrineUserRepositoryTest extends EntityManagerTestCase
     }
     
     /**
-     * 
+     *
      */
-    protected function tearDown() 
+    protected function tearDown()
     {
         $this->userRepository = null;
         parent::tearDown();
     }
     
     /**
-     * 
+     *
      */
     public function testAddAndFindOneUser()
     {
         $this->entityManager()->getConnection()->beginTransaction();
         
-        $userId = $this->userRepository->nextIdentity();        
+        $userId = $this->userRepository->nextIdentity();
         $this->assertInstanceOf(UserId::class, $userId);
                         
         $email = 'kornel.kirsz@gmail.com';

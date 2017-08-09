@@ -11,13 +11,12 @@ use KKirsz\Photos\Domain\Photo\PhotoRepository;
 /**
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
-class DoctrinePhotoRepository
-    extends DoctrineRepository
-    implements PhotoRepository
+class DoctrinePhotoRepository extends DoctrineRepository implements
+    PhotoRepository
 {
     /**
-     * 
-     * @return PhotoId 
+     *
+     * @return PhotoId
      */
     public function nextIdentity() : PhotoId
     {
@@ -26,7 +25,7 @@ class DoctrinePhotoRepository
     }
     
     /**
-     * 
+     *
      * @param Photo $photo
      */
     public function add(Photo $photo)
@@ -35,9 +34,9 @@ class DoctrinePhotoRepository
     }
     
     /**
-     * 
+     *
      * @param PhotoId $photoId
-     * @return Photo|null 
+     * @return Photo|null
      */
     public function photoOfId(PhotoId $photoId)
     {

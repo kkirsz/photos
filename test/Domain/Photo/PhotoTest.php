@@ -24,25 +24,25 @@ class PhotoTest extends TestCase
     
     /**
      *
-     * @var User 
+     * @var User
      */
     private $user;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
-    {        
+    protected function setUp()
+    {
         $this->photoId = $this->createMock(PhotoId::class);
         $this->user    = $this->createMock(User::class);
     }
     
     /**
-     * 
+     *
      */
     public function testCanBeCreated()
-    {        
-        $photo = new Photo($this->photoId, $this->user);        
+    {
+        $photo = new Photo($this->photoId, $this->user);
         $this->assertInstanceOf(Photo::class, $photo);
         $this->assertEquals($this->photoId, $photo->photoId());
         $this->assertEquals($this->user, $photo->addedBy());
@@ -50,10 +50,10 @@ class PhotoTest extends TestCase
     }
     
     /**
-     * 
+     *
      */
     public function testTagCollection()
-    {        
+    {
         $uuidOne = 'BE8C2D2C-671D-11E7-869D-0242AC120002';
         
         $tagIdOne = $this->createMock(TagId::class);
@@ -84,6 +84,6 @@ class PhotoTest extends TestCase
         $photo->tag($tagTwo);
         $this->assertCount(2, $photo->tags());
         $this->assertArrayHasKey($uuidTwo, $photo->tags());
-        $this->assertContains($tagTwo, $photo->tags());        
+        $this->assertContains($tagTwo, $photo->tags());
     }
 }

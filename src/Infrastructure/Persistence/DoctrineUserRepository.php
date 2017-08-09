@@ -11,35 +11,34 @@ use KKirsz\Photos\Domain\Photo\UserRepository;
 /**
  * @author Korneliusz Kirsz <kornel.kirsz@gmail.com>
  */
-class DoctrineUserRepository 
-    extends DoctrineRepository 
-    implements UserRepository
+class DoctrineUserRepository extends DoctrineRepository implements
+    UserRepository
 {
     /**
-     * 
+     *
      * @return UserId
      */
-    public function nextIdentity(): UserId 
+    public function nextIdentity(): UserId
     {
         $uuid = $this->uuid();
         return new UserId($uuid);
     }
     
     /**
-     * 
+     *
      * @param User $user
      */
-    public function add(User $user) 
+    public function add(User $user)
     {
         $this->getEntityManager()->persist($user);
     }
     
     /**
-     * 
+     *
      * @param string $email
      * @return User|null
      */
-    public function findByEmail(string $email) 
+    public function findByEmail(string $email)
     {
         return $this->findOneBy(['email' => $email]);
     }

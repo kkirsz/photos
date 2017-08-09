@@ -13,37 +13,40 @@ class Rating extends Entity
 {
     /**
      *
-     * @var RatingId 
+     * @var RatingId
      */
     private $ratingId;
     
     /**
      *
-     * @var Photo 
+     * @var Photo
      */
     private $photo;
     
     /**
      *
-     * @var User 
+     * @var User
      */
     private $ratedBy;
     
     /**
      *
-     * @var int 
+     * @var int
      */
     private $value;
     
     /**
-     * 
+     *
      * @param RatingId $ratingId
      * @param Photo $photo
      * @param User $ratedBy
      * @param int $value
      */
-    public function __construct(RatingId $ratingId, Photo $photo,
-        User $ratedBy, int $value
+    public function __construct(
+        RatingId $ratingId,
+        Photo $photo,
+        User $ratedBy,
+        int $value
     ) {
         $this->setRatingId($ratingId);
         $this->setPhoto($photo);
@@ -52,7 +55,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @return RatingId
      */
     public function ratingId() : RatingId
@@ -61,7 +64,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @param RatingId $ratingId
      */
     private function setRatingId(RatingId $ratingId)
@@ -70,7 +73,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @return Photo
      */
     public function photo() : Photo
@@ -79,7 +82,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @param Photo $photo
      */
     private function setPhoto(Photo $photo)
@@ -88,7 +91,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @return User
      */
     public function ratedBy() : User
@@ -97,7 +100,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @param User $ratedBy
      */
     private function setRatedBy(User $ratedBy)
@@ -106,7 +109,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @return int
      */
     public function value() : int
@@ -115,7 +118,7 @@ class Rating extends Entity
     }
     
     /**
-     * 
+     *
      * @param int $value
      * @throws \DomainException
      */

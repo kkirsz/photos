@@ -24,15 +24,15 @@ class UserTest extends TestCase
     private $userId;
     
     /**
-     * 
+     *
      */
-    protected function setUp() 
-    {        
+    protected function setUp()
+    {
         $this->userId = $this->createMock(UserId::class);
     }
     
     /**
-     * 
+     *
      * @return array
      */
     public function invalidEmailDataProvider() : array
@@ -50,18 +50,18 @@ class UserTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider invalidEmailDataProvider
      * @param string $email
      */
     public function testCannotBeCreated(string $email)
-    {           
-        $this->expectException(\DomainException::class);        
+    {
+        $this->expectException(\DomainException::class);
         new User($this->userId, $email);
     }
         
     /**
-     * 
+     *
      * @return array
      */
     public function validEmailDataProvider() : array
@@ -72,12 +72,12 @@ class UserTest extends TestCase
     }
     
     /**
-     * 
+     *
      * @dataProvider validEmailDataProvider
      * @param string $email
      */
     public function testCanBeCreated(string $email)
-    {           
+    {
         $user = new User($this->userId, $email);
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals($this->userId, $user->userId());
@@ -85,10 +85,10 @@ class UserTest extends TestCase
     }
     
     /**
-     * 
+     *
      */
     public function testCanAddPhoto()
-    {        
+    {
         $photoId = $this->createMock(PhotoId::class);
         
         $tagId = $this->createMock(TagId::class);
@@ -103,7 +103,7 @@ class UserTest extends TestCase
               ->willReturn('B6C93A27-671E-11E7-869D-0242AC120002');
         
         $tagTwo = $this->createMock(Tag::class);
-        $tagTwo->method('tagId')->willReturn($tagId);        
+        $tagTwo->method('tagId')->willReturn($tagId);
         
         $user = new User($this->userId, 'kornel.kirsz@gmail.com');
         $this->assertInstanceOf(User::class, $user);
@@ -114,8 +114,8 @@ class UserTest extends TestCase
         $this->assertEquals($user, $photo->addedBy());
         $this->assertCount(2, $photo->tags());
         $this->assertArrayHasKey($tagOne->tagId()->uuid(), $photo->tags());
-        $this->assertContains($tagOne, $photo->tags());        
+        $this->assertContains($tagOne, $photo->tags());
         $this->assertArrayHasKey($tagTwo->tagId()->uuid(), $photo->tags());
-        $this->assertContains($tagTwo, $photo->tags());        
+        $this->assertContains($tagTwo, $photo->tags());
     }
 }

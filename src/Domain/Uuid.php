@@ -13,12 +13,12 @@ trait Uuid
 {
     /**
      *
-     * @var string 
+     * @var string
      */
     private $uuid;
     
     /**
-     * 
+     *
      * @param string $uuid
      */
     public function __construct(string $uuid)
@@ -27,7 +27,7 @@ trait Uuid
     }
     
     /**
-     * 
+     *
      * @return string
      */
     public function uuid() : string
@@ -36,7 +36,7 @@ trait Uuid
     }
     
     /**
-     * 
+     *
      * @param string $uuid
      * @throws DomainException
      */
@@ -48,5 +48,5 @@ trait Uuid
         }
         
         $this->uuid = $uuid;
-    }    
+    }
 }
